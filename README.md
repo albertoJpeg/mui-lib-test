@@ -11,7 +11,7 @@ Librería de componentes React basados en [material-ui] v4 (https://v4.mui.com/o
 Hasta tener soporte de un Package Registry en GitLab, la instalación se realiza mediante
 
 ```bash
-  ~~npm install git@git.upm.es:react/upm-react-ui.git#master --Save~~
+  npm install git@git.upm.es:react/upm-react-ui.git#master --Save~~
 ```
 
 En el proyecto React importar el componente deseado
