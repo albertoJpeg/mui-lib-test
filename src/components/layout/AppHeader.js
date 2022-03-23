@@ -175,6 +175,7 @@ export function AppHeader(props) {
                     return (
                       <Link to={element.uri}>
                         <Tooltip
+                          arrow
                           title={element.tooltip}
                           key={`${element.tooltip}-iconButton`}
                         >
