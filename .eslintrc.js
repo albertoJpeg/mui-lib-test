@@ -19,6 +19,7 @@ module.exports = {
     }
   },
   rules: {
+    endOfLine: 'off',
     'space-before-function-paren': 0,
     'react/prop-types': 0,
     'react/jsx-handler-names': 0,

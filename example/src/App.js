@@ -226,6 +226,8 @@ const App = () => {
         icon: <AlarmIcon />,
         tooltip: 'Alertas',
         ariaLabel: '',
+        uri: 'doca/tos',
+        variant: 'link',
         onclick: () => null
       }
     ],

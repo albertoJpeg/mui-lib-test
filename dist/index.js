@@ -22,6 +22,7 @@ var icons = require('@material-ui/icons');
 var Collapse = require('@material-ui/core/Collapse');
 var List = require('@material-ui/core/List');
 var PropTypes = require('prop-types');
+var reactRouterDom = require('react-router-dom');
 var Zoom = require('@material-ui/core/Zoom');
 var useScrollTrigger = require('@material-ui/core/useScrollTrigger');
 var makeStyles = require('@material-ui/core/styles/makeStyles');
@@ -30,7 +31,6 @@ var CloseIcon = require('@material-ui/icons/Close');
 var useTheme = require('@material-ui/core/styles/useTheme');
 var ExpandLessOutlinedIcon = require('@material-ui/icons/ExpandLessOutlined');
 var ExpandMoreOutlinedIcon = require('@material-ui/icons/ExpandMoreOutlined');
-var reactRouterDom = require('react-router-dom');
 var Button = require('@material-ui/core/Button');
 var Divider = require('@material-ui/core/Divider');
 var clsx = require('clsx');
@@ -540,16 +540,30 @@ function AppHeader$1(props) {
     return component;
   }), menu && menu.map(function (element) {
     if (!element.submenu) {
-      return /*#__PURE__*/React__default["default"].createElement(Tooltip__default["default"], {
-        title: element.tooltip,
-        key: "".concat(element.tooltip, "-iconButton")
-      }, /*#__PURE__*/React__default["default"].createElement(IconButton__default["default"], {
-        "aria-label": element.ariaLabel || '',
-        onClick: element.handleClick,
-        classes: {
-          root: classes.iconButton
-        }
-      }, element.icon));
+      if (element.variant === 'link') {
+        return /*#__PURE__*/React__default["default"].createElement(reactRouterDom.Link, {
+          to: element.uri
+        }, /*#__PURE__*/React__default["default"].createElement(Tooltip__default["default"], {
+          title: element.tooltip,
+          key: "".concat(element.tooltip, "-iconButton")
+        }, /*#__PURE__*/React__default["default"].createElement(IconButton__default["default"], {
+          "aria-label": element.ariaLabel || '',
+          classes: {
+            root: classes.iconButton
+          }
+        }, element.icon)));
+      } else {
+        return /*#__PURE__*/React__default["default"].createElement(Tooltip__default["default"], {
+          title: element.tooltip,
+          key: "".concat(element.tooltip, "-iconButton")
+        }, /*#__PURE__*/React__default["default"].createElement(IconButton__default["default"], {
+          "aria-label": element.ariaLabel || '',
+          onClick: element.handleClick,
+          classes: {
+            root: classes.iconButton
+          }
+        }, element.icon));
+      }
     } else {
       return /*#__PURE__*/React__default["default"].createElement(MenuButton, {
         tooltip: element.tooltip,

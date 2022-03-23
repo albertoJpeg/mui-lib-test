@@ -23,6 +23,7 @@ import List from '@material-ui/core/List'
 import useLayout from '../../hooks/useLayout'
 import { capitalize } from '../../helpers/string'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -170,20 +171,38 @@ export function AppHeader(props) {
             {menu &&
               menu.map((element) => {
                 if (!element.submenu) {
-                  return (
-                    <Tooltip
-                      title={element.tooltip}
-                      key={`${element.tooltip}-iconButton`}
-                    >
-                      <IconButton
-                        aria-label={element.ariaLabel || ''}
-                        onClick={element.handleClick}
-                        classes={{ root: classes.iconButton }}
+                  if (element.variant === 'link') {
+                    return (
+                      <Link to={element.uri}>
+                        <Tooltip
+                          title={element.tooltip}
+                          key={`${element.tooltip}-iconButton`}
+                        >
+                          <IconButton
+                            aria-label={element.ariaLabel || ''}
+                            classes={{ root: classes.iconButton }}
+                          >
+                            {element.icon}
+                          </IconButton>
+                        </Tooltip>
+                      </Link>
+                    )
+                  } else {
+                    return (
+                      <Tooltip
+                        title={element.tooltip}
+                        key={`${element.tooltip}-iconButton`}
                       >
-                        {element.icon}
-                      </IconButton>
-                    </Tooltip>
-                  )
+                        <IconButton
+                          aria-label={element.ariaLabel || ''}
+                          onClick={element.handleClick}
+                          classes={{ root: classes.iconButton }}
+                        >
+                          {element.icon}
+                        </IconButton>
+                      </Tooltip>
+                    )
+                  }
                 } else {
                   return (
                     <MenuButton
