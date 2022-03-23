@@ -484,6 +484,7 @@ function AppHeader$1(props) {
         return /*#__PURE__*/React.createElement(Link, {
           to: element.uri
         }, /*#__PURE__*/React.createElement(Tooltip$1, {
+          arrow: true,
           title: element.tooltip,
           key: "".concat(element.tooltip, "-iconButton")
         }, /*#__PURE__*/React.createElement(IconButton$1, {
