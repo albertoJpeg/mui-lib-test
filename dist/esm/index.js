@@ -18,6 +18,7 @@ import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import PropTypes from 'prop-types';
+import { Link, useLocation } from 'react-router-dom';
 import Zoom from '@material-ui/core/Zoom';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import makeStyles$1 from '@material-ui/core/styles/makeStyles';
@@ -26,7 +27,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import useTheme from '@material-ui/core/styles/useTheme';
 import ExpandLessOutlinedIcon from '@material-ui/icons/ExpandLessOutlined';
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
-import { useLocation, Link } from 'react-router-dom';
 import Button$1 from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import clsx from 'clsx';
@@ -480,16 +480,30 @@ function AppHeader$1(props) {
     return component;
   }), menu && menu.map(function (element) {
     if (!element.submenu) {
-      return /*#__PURE__*/React.createElement(Tooltip$1, {
-        title: element.tooltip,
-        key: "".concat(element.tooltip, "-iconButton")
-      }, /*#__PURE__*/React.createElement(IconButton$1, {
-        "aria-label": element.ariaLabel || '',
-        onClick: element.handleClick,
-        classes: {
-          root: classes.iconButton
-        }
-      }, element.icon));
+      if (element.variant === 'link') {
+        return /*#__PURE__*/React.createElement(Link, {
+          to: element.uri
+        }, /*#__PURE__*/React.createElement(Tooltip$1, {
+          title: element.tooltip,
+          key: "".concat(element.tooltip, "-iconButton")
+        }, /*#__PURE__*/React.createElement(IconButton$1, {
+          "aria-label": element.ariaLabel || '',
+          classes: {
+            root: classes.iconButton
+          }
+        }, element.icon)));
+      } else {
+        return /*#__PURE__*/React.createElement(Tooltip$1, {
+          title: element.tooltip,
+          key: "".concat(element.tooltip, "-iconButton")
+        }, /*#__PURE__*/React.createElement(IconButton$1, {
+          "aria-label": element.ariaLabel || '',
+          onClick: element.handleClick,
+          classes: {
+            root: classes.iconButton
+          }
+        }, element.icon));
+      }
     } else {
       return /*#__PURE__*/React.createElement(MenuButton, {
         tooltip: element.tooltip,
