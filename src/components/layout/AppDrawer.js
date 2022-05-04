@@ -200,7 +200,7 @@ export function AppDrawer(props) {
 
   useEffect(() => {
     setCollapseMenus(getDefaultMenuState())
-  }, [pathname])
+  }, [pathname, menu])
 
   function getDefaultMenuState() {
     return menu
@@ -307,7 +307,9 @@ export function AppDrawer(props) {
       )
     } else {
       const isSubmenuUri = !!e.childrens.find((m) => m.uri === pathname)
-      const isOpen = collapseMenus.find((s) => s.id === e.id).open
+      const itemFound = collapseMenus.find((s) => s.id === e.id)
+      const isOpen = itemFound ? itemFound.open : false
+
       normalMenu.push(
         <div key={`${e.id}-desktopNormalMenu-Childrens`}>
           <ListItem
