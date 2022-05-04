@@ -30,19 +30,29 @@ Clonar el proyecto
   git clone "git@git.upm.es:react/upm-react-ui.git"
 ```
 
-Cambiar el directorio
+Cambiar al directorio e instalar dependecias
 
 ```bash
   cd upm-react-ui
 ```
-
-Instalar dependencias
-
 ```bash
   npm install
 ```
 
-Iniciar el servidor local en localhost:3000
+Cambiar al directorio example e instalar dependencias
+```bash
+  cd example
+```
+```bash
+  npm install
+```
+
+Volver al directorio principal y empaquetar los componentes 
+```bash
+  npm run watch 
+```
+
+Abrir otra terminal y levantar el servidor de la demo 
 ```bash
   npm run start
 ```
