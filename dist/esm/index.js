@@ -1011,7 +1011,7 @@ function AppDrawer$1(props) {
 
   useEffect(function () {
     setCollapseMenus(getDefaultMenuState());
-  }, [pathname]);
+  }, [pathname, menu]);
 
   function getDefaultMenuState() {
     return menu.filter(function (m) {
@@ -1119,9 +1119,10 @@ function AppDrawer$1(props) {
       var isSubmenuUri = !!e.childrens.find(function (m) {
         return m.uri === pathname;
       });
-      var isOpen = collapseMenus.find(function (s) {
+      var itemFound = collapseMenus.find(function (s) {
         return s.id === e.id;
-      }).open;
+      });
+      var isOpen = itemFound ? itemFound.open : false;
       normalMenu.push( /*#__PURE__*/React.createElement("div", {
         key: "".concat(e.id, "-desktopNormalMenu-Childrens")
       }, /*#__PURE__*/React.createElement(ListItem$1, {
