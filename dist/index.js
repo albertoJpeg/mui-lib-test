@@ -544,6 +544,7 @@ function AppHeader$1(props) {
         return /*#__PURE__*/React__default["default"].createElement(reactRouterDom.Link, {
           to: element.uri
         }, /*#__PURE__*/React__default["default"].createElement(Tooltip__default["default"], {
+          arrow: true,
           title: element.tooltip,
           key: "".concat(element.tooltip, "-iconButton")
         }, /*#__PURE__*/React__default["default"].createElement(IconButton__default["default"], {
