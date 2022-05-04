@@ -52,8 +52,8 @@ Volver al directorio principal y empaquetar los componentes
   npm run watch 
 ```
 
-Abrir otra terminal y levantar el servidor de la demo 
+Abrir otra terminal y levantar el servidor de la demo desde la carpeta example
 ```bash
-  npm run start
+  cd example && npm run start
 ```
 
