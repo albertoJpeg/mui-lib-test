@@ -1,59 +1,36 @@
 
 # upm-react-ui
-Librería de componentes React basados en [material-ui] v4 (https://v4.mui.com/ogo](./src/images/Logo.png)
+Librería de componentes React basados en [mui.com](https://mui.com/)
 
 ![Logo](./src/images/logo.png)
 
 ## Demo
 -- en construcción --
 
-## Installation y ejemplo básico de uso
-Hasta tener soporte de un Package Registry en GitLab, la instalación se realiza mediante
-
-```bash
-  npm install git@git.upm.es:react/upm-react-ui.git#master --Save~~
-```
-
-En el proyecto React importar el componente deseado
-```javascript
-import { LoadingButton } from 'upm-react-ui'
-
-function App() {
-  return <LoadingButton> Botón de prueba </LoadingButton>
-}
-```
-
 ## Desplegar demo en local
 
 Clonar el proyecto
 ```bash
-  git clone "git@git.upm.es:react/upm-react-ui.git"
+  git clone --branch feature/v2.0.0 "git@git.upm.es:react/upm-react-ui.git"
 ```
 
 Cambiar al directorio e instalar dependecias
 
 ```bash
-  cd upm-react-ui
-```
-```bash
-  npm install
+  cd upm-react-ui && npm i
 ```
 
-Cambiar al directorio example e instalar dependencias
+Cambiar al directorio site e instalar dependencias
 ```bash
-  cd example
-```
-```bash
-  npm install
+  cd site && npm i
 ```
 
 Volver al directorio principal y empaquetar los componentes 
 ```bash
-  npm run watch 
+  npm run build 
 ```
 
-Abrir otra terminal y levantar el servidor de la demo desde la carpeta example
+Abrir otra terminal y levantar el servidor de la demo
 ```bash
-  cd example && npm run start
+  cd site && npm run dev
 ```
-
