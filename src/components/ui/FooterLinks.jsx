@@ -1,15 +1,16 @@
-import React from 'react'
-import { Grid, Typography, Link } from '@mui/material'
-export const FooterLinks = ({ legalNoticeUri }) => {
+import React from 'react';
+import { Grid, Typography, Link } from '@mui/material';
+
+export default function FooterLinks({ legalNoticeUri }) {
   return (
     <Grid
       container
-      justifyContent='center'
+      justifyContent="center"
       alignItems="center"
     >
       <Grid
         item
-        xs='auto'
+        xs="auto"
         key="footer-link-aviso"
       >
         <Link href={legalNoticeUri} underline="hover" variant="caption" color="textSecondary">
@@ -19,7 +20,7 @@ export const FooterLinks = ({ legalNoticeUri }) => {
       <Grid
         item
         key="footer-link-copy"
-        xs='auto'
+        xs="auto"
       >
         <Typography variant="caption" color="textSecondary" sx={{ px: 1 }}>
           {' | '}
@@ -31,7 +32,7 @@ export const FooterLinks = ({ legalNoticeUri }) => {
           {' | '}
         </Typography>
       </Grid>
-      <Grid item key="footer-link-upm" xs='auto'>
+      <Grid item key="footer-link-upm" xs="auto">
         <Link
           href="https://www.upm.es/contacto/directorio?centro=90&organo=8295"
           underline="hover"
@@ -42,5 +43,5 @@ export const FooterLinks = ({ legalNoticeUri }) => {
         </Link>
       </Grid>
     </Grid>
-  )
+  );
 }

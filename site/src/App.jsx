@@ -1,51 +1,51 @@
-import React from 'react'
-import { CustomAppBar, CustomAppFooter } from 'vite-upm-react-ui'
-import logo from '../images/logo.png'
+import React from 'react';
+import { CustomAppBar, CustomAppFooter } from 'vite-upm-react-ui';
+import logo from '../images/logo.png';
 
-export const App = () => {
+export function App() {
   return (
-    <React.Fragment>
+    <>
       <CustomAppBar
         user={{
           name: 'Usuario',
-          surnames: 'de pruebas'
+          surnames: 'de pruebas',
         }}
         logo={logo}
       />
       <div
         style={{
-          minHeight: 'calc(100vh - (150px + 64px + 60px))'
+          minHeight: 'calc(100vh - (150px + 64px + 60px))',
         }}
       />
       <CustomAppFooter
         contact={[
           'link de ayuda 1',
-          'link de ayuda 2'
+          'link de ayuda 2',
         ]}
         columns={[
           {
             title: 'Ayuda',
             items: [
               'link de ayuda 1',
-              'link de ayuda 2'
-            ]
+              'link de ayuda 2',
+            ],
           },
           {
             title: 'Columna 1',
             items: [
               'link de columna 1',
-              'link de columna 1'
-            ]
+              'link de columna 1',
+            ],
           },
           {
             title: 'Columna 1',
             items: [
               'link de columna 1',
-              'link de columna 1'
-            ]
-          }
+              'link de columna 1',
+            ],
+          },
         ]}
       />
-    </React.Fragment>
-  )
+    </>
+  );
 }

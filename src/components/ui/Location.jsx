@@ -1,9 +1,9 @@
-import React from 'react'
-import { Chip, IconButton, Tooltip } from '@mui/material'
-import { LocationOn } from '@mui/icons-material'
+import React from 'react';
+import { Chip, IconButton, Tooltip } from '@mui/material';
+import { LocationOn } from '@mui/icons-material';
 
-export const Location = props => {
-  const { iconMode } = props
+export default function Location(props) {
+  const { iconMode } = props;
 
   return iconMode
     ? (
@@ -12,12 +12,12 @@ export const Location = props => {
           <LocationOn />
         </IconButton>
       </Tooltip>
-      )
+    )
     : (
       <Chip
         component="a"
         sx={{
-          border: 0
+          border: 0,
         }}
         clickable
         icon={<LocationOn key="chip-icon" />}
@@ -25,5 +25,5 @@ export const Location = props => {
         key="chip-location"
         variant="outlined"
       />
-      )
+    );
 }

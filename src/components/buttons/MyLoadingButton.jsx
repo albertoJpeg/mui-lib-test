@@ -1,8 +1,8 @@
-import React from 'react'
-import LoadingButton from '@mui/lab/LoadingButton'
+import React from 'react';
+import LoadingButton from '@mui/lab/LoadingButton';
 
-export const MyLoadingButton = props => {
-  const { value, children, ...rest } = props
+export default function MyLoadingButton(props) {
+  const { value, children, ...rest } = props;
 
   return (
     <LoadingButton {...rest}>
@@ -10,5 +10,5 @@ export const MyLoadingButton = props => {
       {' '}
       {value}
     </LoadingButton>
-  )
+  );
 }

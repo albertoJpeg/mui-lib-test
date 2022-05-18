@@ -1,8 +1,8 @@
-import React from 'react'
-import { Button } from '@mui/material'
+import React from 'react';
+import { Button } from '@mui/material';
 
-export const MyButton = props => {
-  const { value, children, ...rest } = props
+export default function MyButton(props) {
+  const { value, children, ...rest } = props;
 
   return (
     <Button {...rest}>
@@ -10,5 +10,5 @@ export const MyButton = props => {
       {' '}
       {value}
     </Button>
-  )
+  );
 }

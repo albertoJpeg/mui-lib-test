@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-export const LayoutContext = React.createContext({})
+export const LayoutContext = React.createContext({});
 
-export const LayoutProvider = props => {
-  const { defaultOpen, children } = props
-  const [open, setOpen] = useState(defaultOpen)
-  const [dimensions, setDimensions] = useState({ footer: 0, content: 0 })
+export default function LayoutProvider(props) {
+  const { defaultOpen, children } = props;
+  const [open, setOpen] = useState(defaultOpen);
+  const [dimensions, setDimensions] = useState({ footer: 0, content: 0 });
 
   return (
     <LayoutContext.Provider
@@ -13,10 +13,10 @@ export const LayoutProvider = props => {
         open,
         setOpen,
         dimensions,
-        setDimensions
+        setDimensions,
       }}
     >
       {children}
     </LayoutContext.Provider>
-  )
+  );
 }
