@@ -1,7 +1,7 @@
 import React from 'react'
 import LoadingButton from '@mui/lab/LoadingButton'
 
-export const MyLoadingButton = props => {
+export default function MyLoadingButton(props) {
   const { value, children, ...rest } = props
 
   return (

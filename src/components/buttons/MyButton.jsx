@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 
-export const MyButton = props => {
+export default function MyButton(props) {
   const { value, children, ...rest } = props
 
   return (

@@ -1,10 +1,10 @@
 import { Box, Grid, Toolbar } from '@mui/material'
 import React from 'react'
-import { Location } from '../ui/Location'
-import { FooterLinks } from '../ui/FooterLinks'
-import { SocialMediaButtons } from '../buttons/SocialMediaButtons'
+import Location from '../ui/Location'
+import FooterLinks from '../ui/FooterLinks'
+import SocialMediaButtons from '../buttons/SocialMediaButtons'
 
-export const UPMFooter = props => {
+export function UPMFooter(props) {
   const { legalNoticeUri } = props
 
   return (
@@ -13,7 +13,7 @@ export const UPMFooter = props => {
         <Toolbar
           disableGutters
           sx={{
-            minHeight: { md: 60 }
+            minHeight: { md: 60 },
           }}
         >
           <Grid
@@ -24,19 +24,19 @@ export const UPMFooter = props => {
             justifyContent="center"
             spacing={{
               sm: 1,
-              xs: 1
+              xs: 1,
             }}
             sx={{
               px: {
                 xs: 2,
                 lg: 6,
-                xl: 6
-              }
+                xl: 6,
+              },
             }}
           >
             <Grid
               item
-              sm={'auto'}
+              sm="auto"
               md={7}
               lg={6}
               xl={6}
@@ -46,16 +46,16 @@ export const UPMFooter = props => {
             </Grid>
             <Grid
               item
-              sm={'auto'}
+              sm="auto"
               md={10}
               lg={12}
               xl={12}
             >
-              <FooterLinks legalNoticeUri={legalNoticeUri}/>
+              <FooterLinks legalNoticeUri={legalNoticeUri} />
             </Grid>
             <Grid
               item
-              sm={'auto'}
+              sm="auto"
               md={7}
               lg={6}
               xl={6}

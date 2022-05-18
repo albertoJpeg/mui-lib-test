@@ -7,6 +7,9 @@ Librería de componentes React basados en [mui.com](https://mui.com/)
 ## Demo
 -- en construcción --
 
+## eslint estandar.js
+https://github.com/standard/eslint-config-standard/blob/v6.2.1/eslintrc.json#L134
+
 ## Desplegar demo en local
 
 Clonar el proyecto

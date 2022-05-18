@@ -1,12 +1,14 @@
 import React from 'react'
-import { Box, IconButton, Toolbar, AppBar, Tooltip, InputBase, Badge } from '@mui/material'
+import {
+  Box, IconButton, Toolbar, AppBar, Tooltip, InputBase, Badge,
+} from '@mui/material'
 import {
   Apps,
   NotificationsNoneOutlined,
   Menu,
   HelpOutline,
   AccountCircleOutlined,
-  SearchOutlined
+  SearchOutlined,
 } from '@mui/icons-material'
 import { styled, alpha } from '@mui/material/styles'
 
@@ -15,15 +17,15 @@ const Search = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25)
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
   marginRight: theme.spacing(1),
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
-    width: 'auto'
-  }
+    width: 'auto',
+  },
 }))
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -33,7 +35,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
 }))
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -47,13 +49,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('sm')]: {
       width: '12ch',
       '&:focus': {
-        width: '20ch'
-      }
-    }
-  }
+        width: '20ch',
+      },
+    },
+  },
 }))
 
-export const CustomAppBar = props => {
+export default function CustomAppBar(props) {
   const { logo = null, notifications = [] } = props
 
   return (
@@ -62,7 +64,7 @@ export const CustomAppBar = props => {
         <Toolbar
           disableGutters
           sx={{
-            p: theme => theme.spacing(0, 1)
+            p: (theme) => theme.spacing(0, 1),
           }}
         >
           <IconButton
@@ -73,10 +75,11 @@ export const CustomAppBar = props => {
           >
             <Menu />
           </IconButton>
+          {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
           <React.Fragment sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
             {
               logo
-                ? <img src={logo} alt="" style={{ height: 36 }}/>
+                ? <img src={logo} alt="" style={{ height: 36 }} />
                 : null
             }
           </React.Fragment>
@@ -92,17 +95,17 @@ export const CustomAppBar = props => {
             />
           </Search>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Tooltip title={'Ayuda'}>
+            <Tooltip title="Ayuda">
               <IconButton size="large" aria-label="Ayuda" color="inherit">
                 <HelpOutline />
               </IconButton>
             </Tooltip>
-            <Tooltip title={'Más aplicaciones'}>
+            <Tooltip title="Más aplicaciones">
               <IconButton size="large" aria-label="Más aplicaciones" color="inherit">
                 <Apps />
               </IconButton>
             </Tooltip>
-            <Tooltip title={'Notificaciones'}>
+            <Tooltip title="Notificaciones">
               <IconButton
                 size="large"
                 aria-label="Notificaciones"
@@ -111,15 +114,15 @@ export const CustomAppBar = props => {
                 {
                   notifications.length > 0
                     ? (
-                      <Badge badgeContent={notifications.length} color="secondary" component='div'>
+                      <Badge badgeContent={notifications.length} color="secondary" component="div">
                         <NotificationsNoneOutlined />
                       </Badge>
-                      )
+                    )
                     : <NotificationsNoneOutlined />
                 }
               </IconButton>
             </Tooltip>
-            <Tooltip title={'Usuario'}>
+            <Tooltip title="Usuario">
               <IconButton
                 size="large"
                 aria-label="account of current user"

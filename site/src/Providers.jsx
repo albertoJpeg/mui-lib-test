@@ -1,13 +1,13 @@
 import React from 'react'
+import { LayoutProvider } from 'vite-upm-react-ui'
 import { App } from './App'
-import { LayoutProvider } from '../../dist/vite-upm-react-ui.es'
 
-export const Providers = () => {
+export function Providers() {
   return (
-    <React.Fragment>
+    <>
       <LayoutProvider>
         <App />
       </LayoutProvider>
-    </React.Fragment>
+    </>
   )
 }

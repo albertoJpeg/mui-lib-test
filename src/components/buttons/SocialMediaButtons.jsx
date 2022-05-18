@@ -1,8 +1,10 @@
 import React from 'react'
 import { Grid, IconButton, Tooltip } from '@mui/material'
-import { Facebook, Instagram, LinkedIn, Twitter, YouTube } from '@mui/icons-material'
+import {
+  Facebook, Instagram, LinkedIn, Twitter, YouTube,
+} from '@mui/icons-material'
 
-export const SocialMediaButtons = props => {
+export default function SocialMediaButtons(props) {
   const { justifyContent = 'flex-end' } = props
   return (
     <Grid

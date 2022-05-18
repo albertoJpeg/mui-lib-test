@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const LayoutContext = React.createContext({})
 
-export const LayoutProvider = props => {
+export default function LayoutProvider(props) {
   const { defaultOpen, children } = props
   const [open, setOpen] = useState(defaultOpen)
   const [dimensions, setDimensions] = useState({ footer: 0, content: 0 })
@@ -13,7 +13,7 @@ export const LayoutProvider = props => {
         open,
         setOpen,
         dimensions,
-        setDimensions
+        setDimensions,
       }}
     >
       {children}
