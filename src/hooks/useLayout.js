@@ -1,4 +1,4 @@
-import { useContext } from 'react';
-import { LayoutContext } from '../providers/LayoutProvider';
+import { useContext } from 'react'
+import { LayoutContext } from '../providers/LayoutProvider'
 
-export const useLayout = () => useContext(LayoutContext);
+export const useLayout = () => useContext(LayoutContext)

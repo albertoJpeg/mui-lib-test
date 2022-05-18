@@ -1,27 +1,27 @@
-import React from 'react';
-import { Grid } from '@mui/material';
+import React from 'react'
+import { Grid } from '@mui/material'
 
-import whiteLogo from '../../images/escudo_blanco.png';
-import { UPMFooter } from './UPMFooter';
-import AppFooterColumn from '../ui/AppColumns';
+import whiteLogo from '../../images/escudo_blanco.png'
+import { UPMFooter } from './UPMFooter'
+import AppFooterColumn from '../ui/AppColumns'
 
 const getColumns = (columns) => {
-  const numberOfColumns = columns.length;
-  let ret = [...columns];
+  const numberOfColumns = columns.length
+  let ret = [...columns]
   if (columns.every((c) => c !== null)) {
     if (numberOfColumns < 3) {
-      const fillNulls = Array(3 - numberOfColumns).fill(null);
-      ret = [...ret, ...fillNulls];
+      const fillNulls = Array(3 - numberOfColumns).fill(null)
+      ret = [...ret, ...fillNulls]
     } else if (numberOfColumns > 4) {
-      ret = ret.slice(0, 3);
+      ret = ret.slice(0, 3)
     }
   }
 
-  return ret;
-};
+  return ret
+}
 
 export default function CustomAppFooter(props) {
-  const { columns = [null, null, null], contact, legalNoticeUri = '#' } = props;
+  const { columns = [null, null, null], contact, legalNoticeUri = '#' } = props
 
   return (
     <>
@@ -115,5 +115,5 @@ export default function CustomAppFooter(props) {
       </footer>
       <UPMFooter legalNoticeUri={legalNoticeUri} />
     </>
-  );
+  )
 }
